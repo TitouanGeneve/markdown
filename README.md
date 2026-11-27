@@ -1,4 +1,4 @@
-# Markdown — le guide pratique
+# Markdown le guide pratique
 
 Une petite page web pour apprendre les bases du Markdown : titres, listes, liens, tableaux, code, et aperçu dans VS Code.
 
