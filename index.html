@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Un guide pratique pour apprendre à écrire et mettre en forme des fichiers Markdown.">
+  <title>Markdown</title>
+  <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body id="haut">
+  <header class="site-header">
+    <a class="site-name" href="#haut">Markdown</a>
+    <nav aria-label="Sections">
+      <a href="#mise-en-forme">Mise en forme</a>
+      <a href="#code">Code</a>
+      <a href="#extras">Détails</a>
+      <a href="#vs-code">VS Code</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="intro">
+      <h1>Écrire en Markdown</h1>
+      <p class="lead">Le Markdown permet de mettre en forme un texte avec quelques symboles, directement dans un fichier texte. On l’utilise pour les fichiers README, les notes, la documentation.</p>
+      <p>Ce guide montre les éléments les plus courants. Dans chaque exemple, la colonne de gauche contient ce qu’on écrit, celle de droite ce qu’on obtient.</p>
+    </section>
+
+    <section id="mise-en-forme">
+      <h2>La mise en forme, pas à pas</h2>
+
+      <article class="lesson">
+        <h3>Les titres</h3>
+        <p>Utilise le caractère <code>#</code>. Plus il y en a, plus le titre est petit.</p>
+        <div class="example">
+          <div class="source">
+            <span class="label">À écrire</span>
+<pre><code># Titre principal
+## Sous-titre
+### Petit titre</code></pre>
+          </div>
+          <div class="result">
+            <span class="label">Résultat</span>
+            <div class="rendered">
+              <p class="demo-h1">Titre principal</p>
+              <p class="demo-h2">Sous-titre</p>
+              <p class="demo-h3">Petit titre</p>
+            </div>
+          </div>
+        </div>
+        <p class="note"><strong>À retenir :</strong> mets un espace après les <code>#</code> et garde les titres dans un ordre logique.</p>
+      </article>
+
+      <article class="lesson">
+        <h3>Les paragraphes</h3>
+        <p>Une ligne vide sépare deux paragraphes.</p>
+        <div class="example">
+          <div class="source">
+            <span class="label">À écrire</span>
+<pre><code>Voici un premier paragraphe.
+
+Voici un deuxième paragraphe.</code></pre>
+          </div>
+          <div class="result">
+            <span class="label">Résultat</span>
+            <div class="rendered">
+              <p>Voici un premier paragraphe.</p>
+              <p>Voici un deuxième paragraphe.</p>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <article class="lesson">
+        <h3>Gras, italique et barré</h3>
+        <p>Entoure le texte d’astérisques (ou de tirets bas). Le texte barré s’écrit avec deux tildes.</p>
+        <div class="example">
+          <div class="source">
+            <span class="label">À écrire</span>
+<pre><code>**Texte en gras**
+*Texte en italique*
+~~Texte barré~~</code></pre>
+          </div>
+          <div class="result">
+            <span class="label">Résultat</span>
+            <div class="rendered">
+              <p><strong>Texte en gras</strong></p>
+              <p><em>Texte en italique</em></p>
+              <p><del>Texte barré</del></p>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <article class="lesson">
+        <h3>Les listes</h3>
+        <p>Commence la ligne par <code>-</code> ou <code>*</code> pour une liste à puces, par un nombre suivi d’un point pour une liste numérotée. Deux espaces de plus décalent un élément d’un niveau.</p>
+        <div class="example">
+          <div class="source">
+            <span class="label">À écrire</span>
+<pre><code>- Première idée
+- Deuxième idée
+  - Détail
+
+1. Première étape
+2. Deuxième étape</code></pre>
+          </div>
+          <div class="result">
+            <span class="label">Résultat</span>
+            <div class="rendered">
+              <ul>
+                <li>Première idée</li>
+                <li>Deuxième idée
+                  <ul><li>Détail</li></ul>
+                </li>
+              </ul>
+              <ol>
+                <li>Première étape</li>
+                <li>Deuxième étape</li>
+              </ol>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <article class="lesson">
+        <h3>Les liens et les images</h3>
+        <p>Un lien utilise des crochets pour le texte et des parenthèses pour l’adresse. Une image s’écrit pareil, avec un point d’exclamation devant.</p>
+        <div class="example">
+          <div class="source">
+            <span class="label">À écrire</span>
+<pre><code>[Visiter le site](https://exemple.fr)
+
+![Description de l'image](images/photo.png)</code></pre>
+          </div>
+          <div class="result">
+            <span class="label">Résultat</span>
+            <div class="rendered">
+              <p><span class="fake-link">Visiter le site</span></p>
+              <p class="image-box">[ Description de l’image ]</p>
+            </div>
+          </div>
+        </div>
+        <p class="note"><strong>À retenir :</strong> le texte entre crochets d’une image sert de description si l’image ne s’affiche pas.</p>
+      </article>
+
+      <article class="lesson">
+        <h3>Citations et séparateurs</h3>
+        <p>Le symbole <code>&gt;</code> crée une citation. Trois tirets forment une ligne de séparation.</p>
+        <div class="example">
+          <div class="source">
+            <span class="label">À écrire</span>
+<pre><code>&gt; Une citation ou une remarque importante.
+
+---</code></pre>
+          </div>
+          <div class="result">
+            <span class="label">Résultat</span>
+            <div class="rendered">
+              <blockquote>Une citation ou une remarque importante.</blockquote>
+              <hr>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <article class="lesson">
+        <h3>Les tableaux</h3>
+        <p>Les barres verticales séparent les colonnes. La ligne de tirets sépare l’en-tête du contenu.</p>
+        <div class="example">
+          <div class="source">
+            <span class="label">À écrire</span>
+<pre><code>| Langage | Usage     |
+| ------- | --------- |
+| HTML    | Structure |
+| CSS     | Apparence |</code></pre>
+          </div>
+          <div class="result">
+            <span class="label">Résultat</span>
+            <div class="rendered">
+              <table>
+                <thead><tr><th>Langage</th><th>Usage</th></tr></thead>
+                <tbody>
+                  <tr><td>HTML</td><td>Structure</td></tr>
+                  <tr><td>CSS</td><td>Apparence</td></tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </article>
+    </section>
+
+    <section id="code">
+      <h2>Afficher du code</h2>
+      <p>Pour un mot ou une commande dans une phrase, entoure-le d’accents graves. Pour plusieurs lignes, ouvre et ferme le bloc avec trois accents graves.</p>
+
+      <article class="lesson">
+        <h3>Dans une phrase</h3>
+        <div class="example">
+          <div class="source">
+            <span class="label">À écrire</span>
+<pre><code>Lance `npm install` pour
+installer les dépendances.</code></pre>
+          </div>
+          <div class="result">
+            <span class="label">Résultat</span>
+            <div class="rendered">
+              <p>Lance <code>npm install</code> pour installer les dépendances.</p>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <article class="lesson">
+        <h3>Dans un bloc</h3>
+        <p>Écris le nom du langage juste après les trois premiers accents graves : certains aperçus colorent alors le code.</p>
+        <div class="example">
+          <div class="source">
+            <span class="label">À écrire</span>
+<pre><code>```html
+&lt;h1&gt;Bonjour !&lt;/h1&gt;
+&lt;p&gt;Mon premier exemple.&lt;/p&gt;
+```</code></pre>
+          </div>
+          <div class="result">
+            <span class="label">Résultat</span>
+            <div class="rendered">
+<pre class="block"><code>&lt;h1&gt;Bonjour !&lt;/h1&gt;
+&lt;p&gt;Mon premier exemple.&lt;/p&gt;</code></pre>
+            </div>
+          </div>
+        </div>
+      </article>
+    </section>
+
+    <section id="extras">
+      <h2>Deux détails en plus</h2>
+
+      <article class="lesson">
+        <h3>Les listes de tâches</h3>
+        <p>Écris <code>- [ ]</code> pour une tâche à faire et <code>- [x]</code> pour une tâche terminée.</p>
+        <div class="example">
+          <div class="source">
+            <span class="label">À écrire</span>
+<pre><code>- [ ] Écrire le titre
+- [x] Créer le fichier</code></pre>
+          </div>
+          <div class="result">
+            <span class="label">Résultat</span>
+            <div class="rendered">
+              <ul class="tasks">
+                <li><input type="checkbox" disabled aria-label="À faire"> Écrire le titre</li>
+                <li><input type="checkbox" checked disabled aria-label="Terminé"> Créer le fichier</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <article class="lesson">
+        <h3>Les lignes vides</h3>
+        <p>Laisse une ligne vide entre deux éléments (titre, liste, tableau, bloc de code). C’est plus lisible, et certains aperçus n’affichent pas correctement les éléments collés les uns aux autres.</p>
+      </article>
+    </section>
+
+    <section id="vs-code">
+      <h2>L’aperçu dans VS Code</h2>
+      <p>L’aperçu affiche ton fichier comme un document mis en forme, sans modifier le texte Markdown que tu as écrit.</p>
+      <ol class="steps">
+        <li>Ouvre un fichier qui se termine par <code>.md</code>.</li>
+        <li>Appuie sur <kbd>Ctrl</kbd> + <kbd>Maj</kbd> + <kbd>V</kbd></li>
+        <li>Pour afficher l’aperçu à côté du texte : <kbd>Ctrl</kbd> + <kbd>K</kbd>, puis <kbd>V</kbd>.</li>
+      </ol>
+      <p>Tu peux aussi faire un clic droit sur l’onglet du fichier et choisir « Ouvrir l’aperçu ».</p>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>© 2026 Titouan Genève — licence MIT</p>
+  </footer>
+</body>
+</html>
